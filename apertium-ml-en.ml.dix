@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dictionary>
+      <sdefs>
+            <sdef n="n"/>
+            <sdef n="sg"/>
+            <sdef n="pl"/>
+            <sdef n="kaL_"/>
+      </sdefs>
+      <pardefs>
+            <pardef n="gramofon__n">
+         		<e><p>
+         			<l/><r><s n="n"/><s n="sg"/></r>
+         		</p></e>
+         		<e><p>
+         			<l>i</l><r><s n="n"/><s n="pl"/>
+         			</r>
+                  </p></e>
+            </pardef>
+            <pardef n="mara__n">
+               <e><p>
+                        <l>ങ്ങള്‍</l><r><s n="n"/><s n="pl"/></r>
+               </p></e>
+               <e><p>
+                        <l>ം</l>  <r><s n="n"/><s n="sg"/></r>
+               </p></e>
+                  
+            </pardef>
+      </pardefs>
+      <section id="main" type="standard">
+            <e lm="gramofon"><i>gramofon</i><par n="gramofon__n"/></e>
+   		<!-- lm, is for lemma.
+                  i, is for identity (the left and the right are the same).
+                  par, is for paradigm.-->
+            <e lm="mara"><i>മര</i><par n="mara__n"/></e>
+      </section>
+</dictionary>

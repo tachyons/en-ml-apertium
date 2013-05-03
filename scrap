@@ -1,0 +1,38 @@
+lt-comp lr apertium-ml-en.ml.dix ml-en.automorf.bin
+lt-comp rl apertium-ml-en.ml.dix en-ml.autogen.bin
+lt-proc ml-en.automorf.bin
+
+lt-comp lr apertium-ml-en.en.dix ml-en.automorf.bin
+lt-comp rl apertium-ml-en.en.dix en-ml.autogen.bin
+lt-proc ml-en.automorf.bin
+04672226494
+//
+lt-comp lr apertium-ml-en.ml.dix ml-en.automorf.bin
+lt-comp rl apertium-ml-en.en.dix ml-en.autogen.bin
+
+lt-comp lr apertium-ml-en.en.dix en-ml.automorf.bin
+lt-comp rl apertium-ml-en.ml.dix en-ml.autogen.bin
+
+lt-comp lr apertium-ml-en.ml-en.dix ml-en.autobil.bin
+lt-comp rl apertium-ml-en.ml-en.dix en-ml.autobil.bin
+
+apertium-preprocess-transfer apertium-ml-en.ml-en.t1x ml-en.t1x.bin
+
+ echo "മരങ്ങള്‍" | lt-proc ml-en.automorf.bin 
+ 
+ echo "മരങ്ങള്‍" | lt-proc ml-en.automorf.bin | \
+ gawk 'BEGIN{RS="$"; FS="/";}{nf=split($1,COMPONENTS,"^"); for(i = 1; i<nf; i++) printf COMPONENTS[i]; if($2 != "") printf("^%s$",$2);}'
+  
+  echo "മരങ്ങള്‍ " | lt-proc ml-en.automorf.bin | \
+  gawk 'BEGIN{RS="$"; FS="/";}{nf=split($1,COMPONENTS,"^"); for(i = 1; i<nf; i++) printf COMPONENTS[i]; if($2 != "") printf("^%s$",$2);}' | \
+  apertium-transfer apertium-ml-en.ml-en.t1x ml-en.t1x.bin ml-en.autobil.bin
+  
+    echo "gramofoni" | lt-proc ml-en.automorf.bin | \
+  gawk 'BEGIN{RS="$"; FS="/";}{nf=split($1,COMPONENTS,"^"); for(i = 1; i<nf; i++) printf COMPONENTS[i]; if($2 != "") printf("^%s$",$2);}' | \
+  apertium-transfer apertium-ml-en.ml-en.t1x ml-en.t1x.bin ml-en.autobil.bin
+echo "മരങ്ങള്‍ " | lt-proc ml-en.automorf.bin | \
+gawk 'BEGIN{RS="$"; FS="/";}{nf=split($1,COMPONENTS,"^"); for(i = 1; i<nf; i++) printf COMPONENTS[i]; if($2 != "") printf("^%s$",$2);}' | \
+apertium-transfer apertium-ml-en.ml-en.t1x ml-en.t1x.bin ml-en.autobil.bin | \
+lt-proc -g ml-en.autogen.bin
+
+

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transfer>
+	<section-def-cats> <!--  Define categories -->
+		<def-cat n="nom">
+   			<cat-item tags="n.*"/>
+		</def-cat>
+	</section-def-cats>
+	<section-def-attrs>
+		<def-attr n="nbr">  <!-- the attribute nbr (number), which can be either singular (sg) or plural (pl). -->
+   			<attr-item tags="sg"/>
+   			<attr-item tags="pl"/>
+		</def-attr>
+		<def-attr n="a_nom"> <!-- attribute a_nom (attribute noun). -->
+   			<attr-item tags="n"/>
+		</def-attr>
+	</section-def-attrs>
+	<section-def-vars> <!-- section for global variables -->
+		<def-var n="number"/>
+	</section-def-vars>
+	<section-rules> <!-- Define rules -->
+		<rule>
+		   <pattern>
+		     <pattern-item n="nom"/>
+		   </pattern>
+		   <action>
+		     <out>
+		       <lu>
+		         <clip pos="1" side="tl" part="lem"/>
+		         <clip pos="1" side="tl" part="a_nom"/>
+		         <clip pos="1" side="tl" part="nbr"/>
+		       </lu>
+		     </out>
+		   </action>
+		</rule>		
+	</section-rules>
+</transfer>

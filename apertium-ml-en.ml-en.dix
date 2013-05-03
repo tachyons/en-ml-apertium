@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dictionary>
+   <alphabet/>
+   <sdefs>
+     <sdef n="n"/>
+     <sdef n="sg"/>
+     <sdef n="pl"/>
+   </sdefs>
+
+   <section id="main" type="standard">
+	<e><p><l>മല<s n="n"/></l><r>tree<s n="n"/></r></p></e>
+   </section>
+</dictionary>
